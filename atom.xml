@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>mmmmmwwwwttt</title>
+  
+  <subtitle>一个直男</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-07-19T17:00:34.956Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>oleiolei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>日常</title>
+    <link href="http://yoursite.com/2019/07/20/%E6%97%A5%E5%B8%B8/"/>
+    <id>http://yoursite.com/2019/07/20/日常/</id>
+    <published>2019-07-19T16:58:38.000Z</published>
+    <updated>2019-07-19T17:00:34.956Z</updated>
+    
+    <content type="html"><![CDATA[<p>部署了hexo+github的博客</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;部署了hexo+github的博客&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="http://yoursite.com/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>还是畅通工程</title>
+    <link href="http://yoursite.com/2019/07/20/%E8%BF%98%E6%98%AF%E7%95%85%E9%80%9A%E5%B7%A5%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/07/20/还是畅通工程/</id>
+    <published>2019-07-19T16:17:26.000Z</published>
+    <updated>2019-07-19T16:56:07.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>#include <iostream></iostream></p><p>#include <cstdio></cstdio></p><p>#include <cmath></cmath></p><a id="more"></a><p>#include <cstring></cstring></p><p>#include <climits></climits></p><p>#include <queue></queue></p><p>#include <vector></vector></p><p>#include <stack></stack></p><p>#include <algorithm></algorithm></p><p>#include <cctype></cctype></p><p>#include <map></map></p><p>#define maxx 0x3f3f3f3f</p><p>#define ll long long</p><p>#define FAST_IO std::ios::sync_with_stdio(false), std::cin.tie(0), std::cout.tie(0)</p><p>#define lson l, m, rt &lt;&lt; 1</p><p>#define rson m + 1, r, rt &lt;&lt; 1 | 1<br>using namespace std;<br>const int maxn = 1e4 + 5;<br>int ran[maxn];<br>int pre[maxn];</p><p>int n, m;</p><p>void init()<br>{<br>    for (int i = 1; i &lt;= n; i++) {<br>        pre[i] = i;<br>        ran[i] = 1;<br>    }<br>}</p><p>int find(int x)<br>{<br>    if (x == pre[x]) return x;<br>    return pre[x] = find(pre[x]);<br>}</p><p>void join(int x, int y)<br>{<br>    int fx = find(x);<br>    int fy = find(y);</p><pre><code>if (fx == fy) return;if (ran[x] &lt; ran[y]) pre[fx] = fy;else {    pre[fy] = fx;    if (ran[fx] == ran[fy]) ran[fx]++;}</code></pre><p>}</p><p>int main()<br>{<br>    FAST_IO;<br>    while (cin &gt;&gt; n, n) {<br>        cin &gt;&gt; m;<br>        init();<br>        int a, b;<br>        while (m–) {<br>            cin &gt;&gt; a &gt;&gt; b;<br>            join(a, b);<br>        }<br>        int ans = 0;<br>        for (int i = 1; i &lt;= n; i++) {<br>            if (pre[i] == i) ans++;<br>        }<br>        cout &lt;&lt; ans - 1 &lt;&lt; endl;<br>    }<br>    return 0;<br>}</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#include &lt;iostream&gt;&lt;/iostream&gt;&lt;/p&gt;
+&lt;p&gt;#include &lt;cstdio&gt;&lt;/cstdio&gt;&lt;/p&gt;
+&lt;p&gt;#include &lt;cmath&gt;&lt;/cmath&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hdu1323 畅通工程" scheme="http://yoursite.com/tags/hdu1323-%E7%95%85%E9%80%9A%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
