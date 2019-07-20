@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="mmmmmwwwwttt" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="mmmwwwttt" type="application/atom+xml">
 
 
 
@@ -82,12 +82,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="mmmmmwwwwttt">
+<meta property="og:title" content="mmmwwwttt">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="mmmmmwwwwttt">
+<meta property="og:site_name" content="mmmwwwttt">
 <meta property="og:locale" content="chinese">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mmmmmwwwwttt">
+<meta name="twitter:title" content="mmmwwwttt">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <title>mmmmmwwwwttt</title>
+  <title>mmmwwwttt</title>
   
 
 
@@ -154,7 +154,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">mmmmmwwwwttt</span>
+        <span class="site-title">mmmwwwttt</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -250,7 +250,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mmmmmwwwwttt">
+      <meta itemprop="name" content="mmmwwwttt">
     </span>
 
     
@@ -374,7 +374,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mmmmmwwwwttt">
+      <meta itemprop="name" content="mmmwwwttt">
     </span>
 
     
@@ -435,16 +435,78 @@
 
       
         
-          <p>#include <iostream></iostream></p>
-<p>#include <cstdio></cstdio></p>
-<p>#include <cmath></cmath></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/20/还是畅通工程/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+
+&lt;!--more--&gt;
+#include &lt;cstring&gt;
+#include &lt;climits&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;stack&gt;
+#include &lt;algorithm&gt;
+#include &lt;cctype&gt;
+#include &lt;map&gt;
+#define maxx 0x3f3f3f3f
+#define ll long long
+#define FAST_IO std::ios::sync_with_stdio(false), std::cin.tie(0), std::cout.tie(0)
+#define lson l, m, rt &lt;&lt; 1
+#define rson m + 1, r, rt &lt;&lt; 1 | 1
+using namespace std;
+const int maxn = 1e4 + 5;
+int ran[maxn];
+int pre[maxn];
+
+int n, m;
+
+void init()
+{
+    for (int i = 1; i &lt;= n; i++) {
+        pre[i] = i;
+        ran[i] = 1;
+    }
+}
+
+int find(int x)
+{
+    if (x == pre[x]) return x;
+    return pre[x] = find(pre[x]);
+}
+
+void join(int x, int y)
+{
+    int fx = find(x);
+    int fy = find(y);
+    if (fx == fy) return;
+    if (ran[x] &lt; ran[y]) pre[fx] = fy;
+    else {
+        pre[fy] = fx;
+        if (ran[fx] == ran[fy]) ran[fx]++;
+    }
+}
+
+int main()
+{
+    FAST_IO;
+    while (cin &gt;&gt; n, n) {
+        cin &gt;&gt; m;
+        init();
+        int a, b;
+        while (m--) {
+            cin &gt;&gt; a &gt;&gt; b;
+            join(a, b);
+        }
+        int ans = 0;
+        for (int i = 1; i &lt;= n; i++) {
+            if (pre[i] == i) ans++;
+        }
+        cout &lt;&lt; ans - 1 &lt;&lt; endl;
+    }
+    return 0;
+}</code></pre>
+          
         
       
     </div>
