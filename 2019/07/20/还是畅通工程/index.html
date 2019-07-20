@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hdu1323 畅通工程,">
+  <meta name="keywords" content="并查集,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="#include &amp;lt;iostream&amp;gt; #include &amp;lt;cstdio&amp;gt; #include &amp;lt;cmath&amp;gt;  &amp;lt;!--more--&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;climits&amp;gt; #include &amp;lt;queue&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;l">
-<meta name="keywords" content="hdu1323 畅通工程">
+<meta name="description" content="这还是一道基本的并查集模板题 ，init()初始化 ,find()找父亲 ，join()按照rank数组的高度合并 低的到高的上 ，大功告成啦。">
+<meta name="keywords" content="并查集">
 <meta property="og:type" content="article">
 <meta property="og:title" content="还是畅通工程">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/还是畅通工程/index.html">
 <meta property="og:site_name" content="mmmwwwttt">
-<meta property="og:description" content="#include &amp;lt;iostream&amp;gt; #include &amp;lt;cstdio&amp;gt; #include &amp;lt;cmath&amp;gt;  &amp;lt;!--more--&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;climits&amp;gt; #include &amp;lt;queue&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;l">
+<meta property="og:description" content="这还是一道基本的并查集模板题 ，init()初始化 ,find()找父亲 ，join()按照rank数组的高度合并 低的到高的上 ，大功告成啦。">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-07-20T03:31:20.344Z">
+<meta property="og:updated_time" content="2019-07-20T13:22:28.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="还是畅通工程">
-<meta name="twitter:description" content="#include &amp;lt;iostream&amp;gt; #include &amp;lt;cstdio&amp;gt; #include &amp;lt;cmath&amp;gt;  &amp;lt;!--more--&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;climits&amp;gt; #include &amp;lt;queue&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;l">
+<meta name="twitter:description" content="这还是一道基本的并查集模板题 ，init()初始化 ,find()找父亲 ，join()按照rank数组的高度合并 低的到高的上 ，大功告成啦。">
 
 
 
@@ -312,76 +312,11 @@
       
 
       
-        <pre><code>#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
+        <p>这还是一道基本的并查集模板题 ，init()初始化 ,find()找父亲 ，join()按照rank数组的高度合并 低的到高的上 ，大功告成啦。</p>
+<a id="more"></a>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxx 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO std::ios::sync_with_stdio(false), std::cin.tie(0), std::cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l, m, rt &lt;&lt; 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m + 1, r, rt &lt;&lt; 1 | 1</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> ran[maxn];</span><br><span class="line"><span class="keyword">int</span> pre[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		pre[i] = i;</span><br><span class="line">		ran[i] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x == pre[x]) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">return</span> pre[x] = find(pre[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">join</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fx = find(x);</span><br><span class="line">	<span class="keyword">int</span> fy = find(y);</span><br><span class="line">	<span class="keyword">if</span> (fx == fy) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span> (ran[x] &lt; ran[y]) pre[fx] = fy;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		pre[fy] = fx;</span><br><span class="line">		<span class="keyword">if</span> (ran[fx] == ran[fy]) ran[fx]++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	FAST_IO;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n, n) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">		init();</span><br><span class="line">		<span class="keyword">int</span> a, b;</span><br><span class="line">		<span class="keyword">while</span> (m--) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">			join(a, b);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (pre[i] == i) ans++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans - <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-&lt;!--more--&gt;
-#include &lt;cstring&gt;
-#include &lt;climits&gt;
-#include &lt;queue&gt;
-#include &lt;vector&gt;
-#include &lt;stack&gt;
-#include &lt;algorithm&gt;
-#include &lt;cctype&gt;
-#include &lt;map&gt;
-#define maxx 0x3f3f3f3f
-#define ll long long
-#define FAST_IO std::ios::sync_with_stdio(false), std::cin.tie(0), std::cout.tie(0)
-#define lson l, m, rt &lt;&lt; 1
-#define rson m + 1, r, rt &lt;&lt; 1 | 1
-using namespace std;
-const int maxn = 1e4 + 5;
-int ran[maxn];
-int pre[maxn];
 
-int n, m;
-
-void init()
-{
-    for (int i = 1; i &lt;= n; i++) {
-        pre[i] = i;
-        ran[i] = 1;
-    }
-}
-
-int find(int x)
-{
-    if (x == pre[x]) return x;
-    return pre[x] = find(pre[x]);
-}
-
-void join(int x, int y)
-{
-    int fx = find(x);
-    int fy = find(y);
-    if (fx == fy) return;
-    if (ran[x] &lt; ran[y]) pre[fx] = fy;
-    else {
-        pre[fy] = fx;
-        if (ran[fx] == ran[fy]) ran[fx]++;
-    }
-}
-
-int main()
-{
-    FAST_IO;
-    while (cin &gt;&gt; n, n) {
-        cin &gt;&gt; m;
-        init();
-        int a, b;
-        while (m--) {
-            cin &gt;&gt; a &gt;&gt; b;
-            join(a, b);
-        }
-        int ans = 0;
-        for (int i = 1; i &lt;= n; i++) {
-            if (pre[i] == i) ans++;
-        }
-        cout &lt;&lt; ans - 1 &lt;&lt; endl;
-    }
-    return 0;
-}</code></pre>
       
     </div>
     
@@ -409,7 +344,7 @@ int main()
       
         <div class="post-tags">
           
-            <a href="/tags/hdu1323-畅通工程/" rel="tag"># hdu1323 畅通工程</a>
+            <a href="/tags/并查集/" rel="tag"># 并查集</a>
           
         </div>
       
@@ -428,8 +363,8 @@ int main()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/20/日常/" rel="prev" title="日常">
-                日常 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/20/日常/" rel="prev" title="hexo部署blog">
+                hexo部署blog <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,7 +433,7 @@ int main()
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -511,7 +446,7 @@ int main()
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
