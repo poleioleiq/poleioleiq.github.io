@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="mmmmmwwwwttt">
 <meta property="og:description" content="#include  #include  #include">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-07-19T16:56:07.906Z">
+<meta property="og:updated_time" content="2019-07-20T03:11:55.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="还是畅通工程">
 <meta name="twitter:description" content="#include  #include  #include">
@@ -332,13 +332,7 @@
 <p>int n, m;</p>
 <p>void init()<br>{<br>    for (int i = 1; i &lt;= n; i++) {<br>        pre[i] = i;<br>        ran[i] = 1;<br>    }<br>}</p>
 <p>int find(int x)<br>{<br>    if (x == pre[x]) return x;<br>    return pre[x] = find(pre[x]);<br>}</p>
-<p>void join(int x, int y)<br>{<br>    int fx = find(x);<br>    int fy = find(y);</p>
-<pre><code>if (fx == fy) return;
-if (ran[x] &lt; ran[y]) pre[fx] = fy;
-else {
-    pre[fy] = fx;
-    if (ran[fx] == ran[fy]) ran[fx]++;
-}</code></pre><p>}</p>
+<p>void join(int x, int y)<br>{<br>    int fx = find(x);<br>    int fy = find(y);<br>    if (fx == fy) return;<br>    if (ran[x] &lt; ran[y]) pre[fx] = fy;<br>    else {<br>        pre[fy] = fx;<br>        if (ran[fx] == ran[fy]) ran[fx]++;<br>    }<br>}</p>
 <p>int main()<br>{<br>    FAST_IO;<br>    while (cin &gt;&gt; n, n) {<br>        cin &gt;&gt; m;<br>        init();<br>        int a, b;<br>        while (m–) {<br>            cin &gt;&gt; a &gt;&gt; b;<br>            join(a, b);<br>        }<br>        int ans = 0;<br>        for (int i = 1; i &lt;= n; i++) {<br>            if (pre[i] == i) ans++;<br>        }<br>        cout &lt;&lt; ans - 1 &lt;&lt; endl;<br>    }<br>    return 0;<br>}</p>
 
       
@@ -523,8 +517,8 @@ else {
   </span>
 
   <div class="powered-by">
-  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
-  本站访客数:<span id="busuanzi_value_site_pv"></span>
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
   </span>
   </div>
 
