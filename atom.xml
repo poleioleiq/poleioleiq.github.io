@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-20T13:15:33.358Z</updated>
+  <updated>2019-08-04T12:29:01.613Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sekiro</title>
+    <link href="http://yoursite.com/2019/08/04/sekiro/"/>
+    <id>http://yoursite.com/2019/08/04/sekiro/</id>
+    <published>2019-08-04T12:07:58.000Z</published>
+    <updated>2019-08-04T12:29:01.613Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从入了手柄之后开始了我的漫漫之狼路，今天熟悉了一下手柄的操作，搓了几把2k19之后就开始作死<br>了，哈哈哈。<br>那么今天打的怪是何方妖孽呢？武士大将河原田直盛，嗯，就是这个看起来挺牛逼的名字，其实说实话是<br>挺牛逼的（你把我逼死了好几十次。。。orz我真的服了）。<br>就是这个崽子<br><img src="/images/0.jpg" alt><br>说说我的心路历程吧</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;自从入了手柄之后开始了我的漫漫之狼路，今天熟悉了一下手柄的操作，搓了几把2k19之后就开始作死&lt;br&gt;了，哈哈哈。&lt;br&gt;那么今天打的怪是何方妖孽呢？武士大将河原田直盛，嗯，就是这个看起来挺牛逼的名字，其实说实话是&lt;br&gt;挺牛逼的（你把我逼死了好几十次。。。orz我真的服了
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="http://yoursite.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="之狼" scheme="http://yoursite.com/tags/%E4%B9%8B%E7%8B%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>当然是线段树模板</title>
