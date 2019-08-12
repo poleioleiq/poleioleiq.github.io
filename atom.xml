@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-04T13:09:13.036Z</updated>
+  <updated>2019-08-12T11:00:36.224Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次win10下安装tensorflow的踩坑经历</title>
+    <link href="http://yoursite.com/2019/08/12/%E4%B8%80%E6%AC%A1win10%E4%B8%8B%E5%AE%89%E8%A3%85tensorflow%E7%9A%84%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"/>
+    <id>http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/</id>
+    <published>2019-08-12T08:40:01.000Z</published>
+    <updated>2019-08-12T11:00:36.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>一次悲惨的tensorflow踩坑经历<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.jpg" alt></p><a id="more"></a><p>废话少说:本人配置是1660-ti i7-9750hq  需要 anaconda3 cuda9.0 以及cudnn7.0 需要另外版本的可以自行百度。<br>cuda9.0以及cudnn7.0百度云链接: <a href="https://pan.baidu.com/s/1qdpFUbHgKHnHoJBqVFjP3Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1qdpFUbHgKHnHoJBqVFjP3Q</a> 提取码: 6nsr<br>anaconda由于国外源速度太捉急，推荐使用清华镜像。<br>可以在promte中输入以下更换成清华镜像。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span></span><br><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span></span><br><span class="line"></span><br><span class="line"># 设置搜索时显示通道地址</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure><p>1.因为tensorflow只支持python3.5-3.6,所以anaconda 安装的环境代码为</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create --name tensorflow_gpu python=<span class="number">3.5</span></span><br><span class="line">conda create --name tensorflow_gpu python=<span class="number">3.6</span></span><br></pre></td></tr></table></figure><p>2.之后激活环境  </p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate tensorflow_gpu</span><br></pre></td></tr></table></figure><p>你打开navigter界面会发现存在<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/ananv.png" alt>基本的环境就已经配好了<br>3.之后安装tensorflow-gpu的组件，顺便安装一个keras的gpu版本,keras也是一个神经网络库</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow-gpu</span><br><span class="line">conda install keras-gpu</span><br></pre></td></tr></table></figure><p>3.1以上两行存在疑问，虽然anaconda安装好tensorflow-gpu1.10就已经自带cuda8.0和cudnn6.0,但是我发现经过该尝试后存在环境变量里没有相应配置，导致不能import tensorflow。笔者在多次尝试后还是选择了pip安装，代码如下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu==<span class="number">1.10</span> -i https:<span class="comment">//pypi.tuna.tsinghua.edu.cn/simple #在包名后面加==和版本号可指定版本安装</span></span><br><span class="line">pip install tensorflow-gpu -i https:<span class="comment">//pypi.tuna.tsinghua.edu.cn/simple #默认安装最新版本</span></span><br></pre></td></tr></table></figure><p>笔者选择了1.6.0版本，这里不推荐安装最新版本的tensorflow，可能会存在兼容问题。<br>运行完是这样的<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/1.png" alt></p><p>import一下，此时没有安装cuda9.0，出现以下错误<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/2.png" alt></p><p>4.之后配置cuda9.0,选择相应的版本。笔者选择安装本地版，在这个墙比山高的地方，网络版速度实在捉急<br>进度条读完就进入安装界面，(如果你的驱动版本高于cuda9.0，它会提示识别不了，但是不用管他，装就完事了)<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/3.png" alt><br>之后选择精简版安装(自定义安装，因为我们只需要cuda)</p><p>5.安装完解压cudnn。将解压出来的三个文件夹放到v9文件夹下<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.png" alt><br>惯例，添加环境变量<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/5.png" alt></p><p>保存退出。<br>再重新进入anaconda promote，运行gpu环境</p><p>一般来说到这里就完结了，一下讲一下笔者遇到的玄学时刻</p><p>001.<br>numpy版本问题，一开始numpy版本为1.16，出现了numpy 版本不兼容tensorflow的问题</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImportError: Something is wrong with the numpy installation. While importing we detected an older version of numpy in ['C:\\Users\\Administrator\\Anaconda3\\lib\\site-packages\\numpy']. One method of fixing this is to repeatedly uninstall numpy until none is found, then reinstall this version.</span><br></pre></td></tr></table></figure><p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/6.png" alt></p><p>随后笔者更改numpy1.13，代码以下<br>卸载numpy包</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall numpy</span><br></pre></td></tr></table></figure><p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/7.png" alt></p><p>安装版本为1.13numpy</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy=<span class="number">1.13</span></span><br></pre></td></tr></table></figure><p>笔者这里终于成功了，教训深刻。。。可以看出cuda成功运行</p><p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/success.png" alt></p><p>这里附上hello world 代码嘻嘻</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">hello = tf.constant(<span class="string">"Hello!TensorFlow"</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure><p>002.windows版本tensorflow的兼容性参考</p><p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/8.png" alt></p><p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/9.png" alt><br>ps.<br>实际上，2017.12的时候，tensorflow 1.4及以下的不支持cuda9.0，且tensorflow1.0版本以上是不支持cuda8.0以下的.tensorflow -gpu1.5以后不支持使用CUDA8.0.cuda8.0对应的cuDNN必须是6.0版的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一次悲惨的tensorflow踩坑经历&lt;br&gt;&lt;img src=&quot;/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="神经网络" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
   
   <entry>
     <title>sekiro之河原田直盛(1)</title>
@@ -76,9 +100,9 @@
     </summary>
     
     
-      <category term="日常" scheme="http://yoursite.com/tags/%E6%97%A5%E5%B8%B8/"/>
-    
       <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="日常" scheme="http://yoursite.com/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
