@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[java中HashMap.put()方法]]></title>
+    <url>%2F2019%2F10%2F16%2Fjava%E4%B8%ADHashMap-put-%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[java中HashMap.put()方法 HashMap的java.util.HashMap.put()方法用于将映射插入到映射中。这意味着我们可以将特定键及其映射的值插入到特定映射中。如果传递现有密钥，则先前的值将被新值替换。如果传递了一对新对，那么该对将作为整体插入。 句法： Hash_Map.put(key, value)参数：该方法有两个参数，都是HashMap的Object类型。 key：这是指需要插入Map进行映射s的关键元素。 value：这是指上面的键映射到的值。返回值：如果传递现有密钥，则返回先前的值。如果传递了一对新对，则返回NULL。 下面的程序用于说明java.util.HashMap.put()的工作方法HashMap.put()程序1：传递现有密钥时。 123456789101112131415161718192021222324252627282930// Java code to illustrate the put() methodimport java.util.*; public class Hash_Map_Demo &#123; public static void main(String[] args) &#123; // Creating an empty HashMap HashMap&lt;Integer, String&gt; hash_map = new HashMap&lt;Integer, String&gt;(); // Mapping string values to int keys hash_map.put(10, "Geeks"); hash_map.put(15, "4"); hash_map.put(20, "Geeks"); hash_map.put(25, "Welcomes"); hash_map.put(30, "You"); // Displaying the HashMap System.out.println("Initial Mappings are: " + hash_map); // Inserting existing key along with new value String returned_value = (String)hash_map.put(20, "All"); // Verifying the returned value System.out.println("Returned value is: " + returned_value); // Displayin the new map System.out.println("New map is: " + hash_map); &#125;&#125; 输出： 123Initial Mappings are: &#123;20=Geeks, 25=Welcomes, 10=Geeks, 30=You, 15=4&#125;Returned value is: GeeksNew map is: &#123;20=All, 25=Welcomes, 10=Geeks, 30=You, 15=4&#125; HashMap.put()程序2：传递新密钥时。 123456789101112131415161718192021222324252627282930// Java code to illustrate the put() methodimport java.util.*; public class Hash_Map_Demo &#123; public static void main(String[] args) &#123; // Creating an empty HashMap HashMap&lt;Integer, String&gt; hash_map = new HashMap&lt;Integer, String&gt;(); // Mapping string values to int keys hash_map.put(10, "Geeks"); hash_map.put(15, "4"); hash_map.put(20, "Geeks"); hash_map.put(25, "Welcomes"); hash_map.put(30, "You"); // Displaying the HashMap System.out.println("Initial Mappings are: " + hash_map); // Inserting existing key along with new value String returned_value = (String)hash_map.put(50, "All"); // Verifying the returned value System.out.println("Returned value is: " + returned_value); // Displayin the new map System.out.println("New map is: " + hash_map); &#125;&#125; 输出： 123Initial Mappings are: &#123;20=Geeks, 25=Welcomes, 10=Geeks, 30=You, 15=4&#125;Returned value is: nullNew map is: &#123;50=All, 20=Geeks, 25=Welcomes, 10=Geeks, 30=You, 15=4&#125; 注意：对于具有不同数据类型的变体和组合的任何类型的映射，都可以执行相同的操作。]]></content>
+      <tags>
+        <tag>java</tag>
+        <tag>HashMap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[tensorflow(01)]]></title>
     <url>%2F2019%2F08%2F14%2Ftensorflow%2F</url>
     <content type="text"><![CDATA[写的第一个tensorflow玩具,感觉很有趣，就贴一下代码。 1234567891011121314151617181920212223242526272829303132333435363738394041424344# -*- coding: utf-8 -*-"""Created on Wed Aug 14 08:59:44 2019@author: mwt"""import tensorflow as tfimport numpy as np#create datax_data=np.random.rand(100).astype(np.float32) #x集合y_data=x_data*0.1+0.3 #要拟合的权和偏置#create tensorflow structure start#Weights=tf.Variable(tf.random_uniform([1],-1.0,1.0)) #一个一维的范围为-1---1的全职biases=tf.Variable(tf.zeros([1])) #偏差一开始为0y=Weights*x_data+biasesloss=tf.reduce_mean(tf.square(y-y_data))optimizer = tf.train.GradientDescentOptimizer(0.5)train=optimizer.minimize(loss)#版本1.2一下就用tf.initializa_all_variable ()#初始化sess=tf.Session()if int((tf.__version__).split('.')[1]) &lt; 12 and int((tf.__version__).split('.')[0]) &lt; 1: init = tf.initialize_all_variables()else: init = tf.global_variables_initializer()#endlsess.run(init) #激活initfor step in range(2001): sess.run(train) if step % 20==0: print(step,sess.run(Weights),sess.run(biases)) 以下是循环500次得出的biases和Weights]]></content>
@@ -13,9 +22,9 @@
     <url>%2F2019%2F08%2F12%2F%E4%B8%80%E6%AC%A1win10%E4%B8%8B%E5%AE%89%E8%A3%85tensorflow%E7%9A%84%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86%2F</url>
     <content type="text"><![CDATA[一次悲惨的tensorflow踩坑经历 废话少说:本人配置是1660-ti i7-9750hq 需要 anaconda3 cuda9.0 以及cudnn7.0 需要另外版本的可以自行百度。cuda9.0以及cudnn7.0百度云链接: https://pan.baidu.com/s/1qdpFUbHgKHnHoJBqVFjP3Q 提取码: 6nsranaconda由于国外源速度太捉急，推荐使用清华镜像。可以在promte中输入以下更换成清华镜像。 123456conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forgeconda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/# 设置搜索时显示通道地址conda config --set show_channel_urls yes 1.因为tensorflow只支持python3.5-3.6,所以anaconda 安装的环境代码为 12conda create --name tensorflow_gpu python=3.5conda create --name tensorflow_gpu python=3.6 2.之后激活环境 1activate tensorflow_gpu 你打开navigter界面会发现存在基本的环境就已经配好了3.之后安装tensorflow-gpu的组件，顺便安装一个keras的gpu版本,keras也是一个神经网络库 12conda install tensorflow-gpuconda install keras-gpu 3.1以上两行存在疑问，虽然anaconda安装好tensorflow-gpu1.10就已经自带cuda8.0和cudnn6.0,但是我发现经过该尝试后存在环境变量里没有相应配置，导致不能import tensorflow。笔者在多次尝试后还是选择了pip安装，代码如下 12pip install tensorflow-gpu==1.10 -i https://pypi.tuna.tsinghua.edu.cn/simple #在包名后面加==和版本号可指定版本安装pip install tensorflow-gpu -i https://pypi.tuna.tsinghua.edu.cn/simple #默认安装最新版本 笔者选择了1.6.0版本，这里不推荐安装最新版本的tensorflow，可能会存在兼容问题。运行完是这样的 import一下，此时没有安装cuda9.0，出现以下错误 4.之后配置cuda9.0,选择相应的版本。笔者选择安装本地版，在这个墙比山高的地方，网络版速度实在捉急进度条读完就进入安装界面，(如果你的驱动版本高于cuda9.0，它会提示识别不了，但是不用管他，装就完事了)之后选择精简版安装(自定义安装，因为我们只需要cuda) 5.安装完解压cudnn。将解压出来的三个文件夹放到v9文件夹下惯例，添加环境变量 保存退出。再重新进入anaconda promote，运行gpu环境 一般来说到这里就完结了，一下讲一下笔者遇到的玄学时刻 001.numpy版本问题，一开始numpy版本为1.16，出现了numpy 版本不兼容tensorflow的问题 1ImportError: Something is wrong with the numpy installation. While importing we detected an older version of numpy in ['C:\\Users\\Administrator\\Anaconda3\\lib\\site-packages\\numpy']. One method of fixing this is to repeatedly uninstall numpy until none is found, then reinstall this version. 随后笔者更改numpy1.13，代码以下卸载numpy包 1pip uninstall numpy 安装版本为1.13numpy 1pip install numpy=1.13 笔者这里终于成功了，教训深刻。。。可以看出cuda成功运行 这里附上hello world 代码嘻嘻 12345import tensorflow as tfhello = tf.constant("Hello!TensorFlow")sess = tf.Session()print(sess.run(hello)) 002.windows版本tensorflow的兼容性参考 ps.实际上，2017.12的时候，tensorflow 1.4及以下的不支持cuda9.0，且tensorflow1.0版本以上是不支持cuda8.0以下的.tensorflow -gpu1.5以后不支持使用CUDA8.0.cuda8.0对应的cuDNN必须是6.0版的。]]></content>
       <tags>
-        <tag>tensorflow</tag>
-        <tag>技术</tag>
         <tag>神经网络</tag>
+        <tag>技术</tag>
+        <tag>tensorflow</tag>
       </tags>
   </entry>
   <entry>
@@ -41,8 +50,8 @@
     <url>%2F2019%2F07%2F20%2F%E6%97%A5%E5%B8%B8%2F</url>
     <content type="text"><![CDATA[部署了hexo+github的博客 参考了https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html 搭建基于github的个人blog参考了https://www.jianshu.com/p/9f0e90cc32c2 对网站进行优化]]></content>
       <tags>
-        <tag>日常</tag>
         <tag>技术</tag>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
