@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="oleiolei">
 <meta property="og:description" content="Java中Map的 entrySet() 详解以及用法(四种遍历map的方式)">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-10-16T15:01:23.457Z">
+<meta property="og:updated_time" content="2019-10-16T15:18:06.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中Map的 entrySet() 详解以及用法(四种遍历map的方式)">
 <meta name="twitter:description" content="Java中Map的 entrySet() 详解以及用法(四种遍历map的方式)">
@@ -367,7 +367,7 @@
 <a id="more"></a>
 
 <p><strong>Entry</strong><br>由于Map中存放的元素均为键值对，故每一个键值对必然存在一个映射关系。<br>Map中采用Entry内部类来表示一个映射项，映射项包含Key和Value (我们总说键值对键值对, 每一个键值对也就是一个Entry)<br><strong>Map.Entry</strong>里面包含getKey()和getValue()方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; it=map.entrySet().iterator();</span><br><span class="line">    <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">        Map.Entry&lt;Integer,Integer&gt; entry=it.next();</span><br><span class="line">        <span class="keyword">int</span> key=entry.getKey();</span><br><span class="line">        <span class="keyword">int</span> value=entry.getValue();</span><br><span class="line">        System.out.println(key+<span class="string">" "</span>+value);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; it=map.entrySet().iterator();</span><br><span class="line">    <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">        Map.Entry&lt;Integer,Integer&gt; entry=it.next();<span class="comment">//Map内部类</span></span><br><span class="line">        <span class="keyword">int</span> key=entry.getKey();</span><br><span class="line">        <span class="keyword">int</span> value=entry.getValue();</span><br><span class="line">        System.out.println(key+<span class="string">" "</span>+value);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>entrySet</strong><br>entrySet是 java中 键-值 对的集合，Set里面的类型是Map.Entry，一般可以通过map.entrySet()得到。</p>
 <p>entrySet实现了Set接口，里面存放的是键值对。一个K对应一个V。<br>用来遍历map的一种方法。</p>
@@ -434,6 +434,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/21/regex-01/" rel="prev" title="regex(01)">
+                regex(01) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -507,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -520,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -646,7 +650,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.3k字</span>
+  <span class="post-count">博客全站共6.1k字</span>
 </div>
 
         

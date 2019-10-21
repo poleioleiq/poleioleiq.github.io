@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="tensorflow,技术,神经网络,">
+  <meta name="keywords" content="regex,">
 
 
 
@@ -84,31 +84,18 @@
 
 
 
-<meta name="description" content="一次悲惨的tensorflow踩坑经历">
-<meta name="keywords" content="tensorflow,技术,神经网络">
+<meta name="description" content="正则表达式的一些小小符号">
+<meta name="keywords" content="regex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一次win10下安装tensorflow的踩坑经历">
-<meta property="og:url" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/index.html">
+<meta property="og:title" content="regex(01)">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/regex-01/index.html">
 <meta property="og:site_name" content="oleiolei">
-<meta property="og:description" content="一次悲惨的tensorflow踩坑经历">
+<meta property="og:description" content="正则表达式的一些小小符号">
 <meta property="og:locale" content="chinese">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/ananv.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/7.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/success.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/8.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/9.png">
-<meta property="og:updated_time" content="2019-08-12T11:00:36.224Z">
+<meta property="og:updated_time" content="2019-10-21T15:21:43.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一次win10下安装tensorflow的踩坑经历">
-<meta name="twitter:description" content="一次悲惨的tensorflow踩坑经历">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.jpg">
+<meta name="twitter:title" content="regex(01)">
+<meta name="twitter:description" content="正则表达式的一些小小符号">
 
 
 
@@ -138,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/21/regex-01/">
 
 
 
 
 
-  <title>一次win10下安装tensorflow的踩坑经历 | oleiolei</title>
+  <title>regex(01) | oleiolei</title>
   
 
 
@@ -309,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/一次win10下安装tensorflow的踩坑经历/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/regex-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="oleiolei">
@@ -326,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一次win10下安装tensorflow的踩坑经历</h1>
+          <h1 class="post-title" itemprop="name headline">regex(01)</h1>
         
 
         <div class="post-meta">
@@ -338,8 +325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T16:40:01+08:00">
-                2019-08-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T20:49:03+08:00">
+                2019-10-21
               </time>
             
 
@@ -376,48 +363,137 @@
       
 
       
-        <p>一次悲惨的tensorflow踩坑经历<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.jpg" alt></p>
+        <p>正则表达式的一些小小符号</p>
 <a id="more"></a>
-<p>废话少说:本人配置是1660-ti i7-9750hq  需要 anaconda3 cuda9.0 以及cudnn7.0 需要另外版本的可以自行百度。<br>cuda9.0以及cudnn7.0百度云链接: <a href="https://pan.baidu.com/s/1qdpFUbHgKHnHoJBqVFjP3Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1qdpFUbHgKHnHoJBqVFjP3Q</a> 提取码: 6nsr<br>anaconda由于国外源速度太捉急，推荐使用清华镜像。<br>可以在promte中输入以下更换成清华镜像。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span></span><br><span class="line">conda config --add channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span></span><br><span class="line"></span><br><span class="line"># 设置搜索时显示通道地址</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
-
-<p>1.因为tensorflow只支持python3.5-3.6,所以anaconda 安装的环境代码为</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create --name tensorflow_gpu python=<span class="number">3.5</span></span><br><span class="line">conda create --name tensorflow_gpu python=<span class="number">3.6</span></span><br></pre></td></tr></table></figure>
-
-<p>2.之后激活环境  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate tensorflow_gpu</span><br></pre></td></tr></table></figure>
-
-<p>你打开navigter界面会发现存在<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/ananv.png" alt>基本的环境就已经配好了<br>3.之后安装tensorflow-gpu的组件，顺便安装一个keras的gpu版本,keras也是一个神经网络库</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow-gpu</span><br><span class="line">conda install keras-gpu</span><br></pre></td></tr></table></figure>
-
-<p>3.1以上两行存在疑问，虽然anaconda安装好tensorflow-gpu1.10就已经自带cuda8.0和cudnn6.0,但是我发现经过该尝试后存在环境变量里没有相应配置，导致不能import tensorflow。笔者在多次尝试后还是选择了pip安装，代码如下</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu==<span class="number">1.10</span> -i https:<span class="comment">//pypi.tuna.tsinghua.edu.cn/simple #在包名后面加==和版本号可指定版本安装</span></span><br><span class="line">pip install tensorflow-gpu -i https:<span class="comment">//pypi.tuna.tsinghua.edu.cn/simple #默认安装最新版本</span></span><br></pre></td></tr></table></figure>
-
-<p>笔者选择了1.6.0版本，这里不推荐安装最新版本的tensorflow，可能会存在兼容问题。<br>运行完是这样的<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/1.png" alt></p>
-<p>import一下，此时没有安装cuda9.0，出现以下错误<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/2.png" alt></p>
-<p>4.之后配置cuda9.0,选择相应的版本。笔者选择安装本地版，在这个墙比山高的地方，网络版速度实在捉急<br>进度条读完就进入安装界面，(如果你的驱动版本高于cuda9.0，它会提示识别不了，但是不用管他，装就完事了)<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/3.png" alt><br>之后选择精简版安装(自定义安装，因为我们只需要cuda)</p>
-<p>5.安装完解压cudnn。将解压出来的三个文件夹放到v9文件夹下<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/4.png" alt><br>惯例，添加环境变量<br><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/5.png" alt></p>
-<p>保存退出。<br>再重新进入anaconda promote，运行gpu环境</p>
-<p>一般来说到这里就完结了，一下讲一下笔者遇到的玄学时刻</p>
-<p>001.<br>numpy版本问题，一开始numpy版本为1.16，出现了numpy 版本不兼容tensorflow的问题</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImportError: Something is wrong with the numpy installation. While importing we detected an older version of numpy in ['C:\\Users\\Administrator\\Anaconda3\\lib\\site-packages\\numpy']. One method of fixing this is to repeatedly uninstall numpy until none is found, then reinstall this version.</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/6.png" alt></p>
-<p>随后笔者更改numpy1.13，代码以下<br>卸载numpy包</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall numpy</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/7.png" alt></p>
-<p>安装版本为1.13numpy</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy=<span class="number">1.13</span></span><br></pre></td></tr></table></figure>
-
-<p>笔者这里终于成功了，教训深刻。。。可以看出cuda成功运行</p>
-<p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/success.png" alt></p>
-<p>这里附上hello world 代码嘻嘻</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">hello = tf.constant(<span class="string">"Hello!TensorFlow"</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure>
-
-<p>002.windows版本tensorflow的兼容性参考</p>
-<p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/8.png" alt></p>
-<p><img src="/2019/08/12/一次win10下安装tensorflow的踩坑经历/9.png" alt><br>ps.<br>实际上，2017.12的时候，tensorflow 1.4及以下的不支持cuda9.0，且tensorflow1.0版本以上是不支持cuda8.0以下的.tensorflow -gpu1.5以后不支持使用CUDA8.0.cuda8.0对应的cuDNN必须是6.0版的。</p>
+<p><strong>1、特别字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>特别字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$</td>
+<td>匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符 \n之外的任何单字符。要匹配 .，请使用 \。</td>
+</tr>
+<tr>
+<td>[</td>
+<td>标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
+</tr>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\’ 匹配 “\”，而 ‘(‘ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
+</tr>
+<tr>
+<td>{</td>
+<td>标记限定符表达式的开始。要匹配 {，请使用 {。</td>
+</tr>
+<tr>
+<td></td>
+<td>指明两项之间的一个选择。要匹配</td>
+</tr>
+</tbody></table>
+<p><strong>2、非打印字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\cx</td>
+<td>匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+</tbody></table>
+<p><strong>3、限定符</strong></p>
+<p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有*或+或?或{n}或{n,}或{n,m}共6种。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 中的”do” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+</tbody></table>
+<p><strong>推荐阅读:</strong><br>[<a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md#learn-regex]" target="_blank" rel="noopener">https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md#learn-regex]</a><br><strong>推荐练习网站</strong><br>[<a href="https://regex101.com/]" target="_blank" rel="noopener">https://regex101.com/]</a></p>
 
       
     </div>
@@ -446,11 +522,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tensorflow/" rel="tag"># tensorflow</a>
-          
-            <a href="/tags/技术/" rel="tag"># 技术</a>
-          
-            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
+            <a href="/tags/regex/" rel="tag"># regex</a>
           
         </div>
       
@@ -463,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/04/sekiro/" rel="next" title="sekiro之河原田直盛(1)">
-                <i class="fa fa-chevron-left"></i> sekiro之河原田直盛(1)
+              <a href="/2019/10/16/Java中Map的-entrySet-详解以及用法-四种遍历map的方式/" rel="next" title="Java中Map的 entrySet() 详解以及用法(四种遍历map的方式)">
+                <i class="fa fa-chevron-left"></i> Java中Map的 entrySet() 详解以及用法(四种遍历map的方式)
               </a>
             
           </div>
@@ -472,10 +544,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/14/tensorflow/" rel="prev" title="tensorflow(01)">
-                tensorflow(01) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
